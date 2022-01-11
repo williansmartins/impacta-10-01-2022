@@ -1,8 +1,10 @@
 module.exports = function (app) {
-    var eventos = app.controllers.eventos;
-    app.get('/menu', eventos.menu);
+    var valida = require('./../middlewares/valida'); 
 
-    app.get('/cadUsuario', eventos.cadastroUsuario);
-    app.get('/cadEvento', eventos.cadastroEvento);
-    app.get('/listaEventos', eventos.listaEventos);
+    var eventos = app.controllers.eventos;
+    app.get('/menu', valida, eventos.menu);
+
+    app.get('/cadUsuario', valida, eventos.cadastroUsuario);
+    app.get('/cadEvento', valida, eventos.cadastroEvento);
+    app.get('/listaEventos', valida, eventos.listaEventos);
 };
