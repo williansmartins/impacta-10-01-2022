@@ -4,6 +4,10 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
 app = express();
+
+var mongoose = require('mongoose');
+global.db = mongoose.connect('mongodb://localhost:27017/dbusuarios');
+
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(cookieParser('nodeEventos'));
