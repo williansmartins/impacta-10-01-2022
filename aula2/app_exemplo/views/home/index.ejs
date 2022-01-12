@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de acesso</title>
+</head>
+<body>
+    <h1>Controle de acesso</h1>
+    <h4>Fornecer o código de acesso</h4>
+
+    <section>
+        <form action="/intro" method="post">
+            Código:
+            <br>
+            <input type="text" name="codigo" placeholder="Código">
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <footer>
+        <small>Sistema de controle de acesso - Express</small>
+    </footer>
+    <footer>
+        <small><%=titulo%></small>
+        <h4><%=detalhes%></h4>
+    </footer>
+</body>
+</html>
