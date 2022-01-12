@@ -1,7 +1,26 @@
 module.exports = function (app) {
+
+    var Usuario = app.models.usuarios;
+
     var HomeController = {
         index: function (req, res) {
-            res.render('home/index');
+            //definindo um novo usuario
+            var nome = "usuario novo";
+            var email = "email@teste.com";
+            var usuario = { "nome": nome, "email": email};
+
+            //definindo a resposta
+            var resultado;
+
+            Usuario.create(usuario, function(erro, usuario){
+                if(erro){
+                    resultado = "Ocorreu um erro ao incluir usuário.";
+                }else{
+                    resultado = "Usuário incluído com sucesso!";
+                }
+            });
+
+            res.render('home/index', { titulo: "Express", resultado: resultado});
         },
         login: function (request, response) {
             var nome = request.body.usuario.nome;
