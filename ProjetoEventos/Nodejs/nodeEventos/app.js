@@ -9,13 +9,12 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(cookieParser('nodeEventos'));
 app.use(expressSession());
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/dbusuarios');
-global.db = mongoose;
+global.db = mongoose.connect('mongodb://127.0.0.1:27017/dbusuarios');;
 
 mongoose.connection.on('connected', function () {
     console.log('=====Conexão estabelecida com sucesso=====');
