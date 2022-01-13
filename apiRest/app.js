@@ -20,7 +20,9 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/contatos');
 global.db = mongoose;
 
-load('models').into(app);
+load('models')
+.then('routes')
+.into(app);
 
 // var Contato = app.models.contato;
 
