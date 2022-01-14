@@ -1,4 +1,5 @@
 module.exports = function (app) {
+    var http = require('http');
     var Evento = app.models.eventos;
 
     var EventosController = {
@@ -46,12 +47,12 @@ module.exports = function (app) {
                 });
             }
         },
-        listaEventosWS: function (request, response) {
+        listaEventosWS: function (request, response) { 
             //array para conter os eventos
             var eventos = [];
 
             //informações da requisição GET
-            var info = {
+            var info = { 
                 host: 'localhost',
                 port: '3200',
                 path: '/eventos',
@@ -60,7 +61,7 @@ module.exports = function (app) {
             //chamando o serviço
             http.request(info, function (res) {
                 res.setEncoding('utf8');
-                res.on('data', function (data) {
+                res.on('data', function (data) { 
                     eventos = JSON.parse(data);
                     var usuario = request.session.usuario,
                         params = { usuario: usuario, eventos: eventos };
