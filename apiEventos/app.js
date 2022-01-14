@@ -1,7 +1,17 @@
 var express = require('express');
 var load = require('express-load');
+var cors = require('cors');
+
 var app = express();
 var bodyParser = require('body-parser');
+
+app.use(cors());
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -11,10 +21,6 @@ global.db = mongoose.connect('mongodb://127.0.0.1:27017/neventos');
 
 load('models').into(app);
 var Evento = app.models.eventos;
-
-app.listen(3000, function () {
-  console.log('ok');
-});
 
 var Evento = app.models.eventos;
 var Pagamento = app.models.pagamentos;
