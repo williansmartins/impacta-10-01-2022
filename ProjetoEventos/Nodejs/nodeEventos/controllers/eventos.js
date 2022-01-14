@@ -122,6 +122,30 @@ module.exports = function (app) {
             });
 
         },
+
+        listaPagamentosWS: function (request, response) {
+            //array para conter os eventos
+            var pagamentos = [];
+
+            //informações da requisição GET
+            var info = {
+                host: 'localhost',
+                port: '3200',
+                path: '/pagamentos',
+                method: 'GET'
+            };
+            //chamando o serviço
+            http.request(info, function (res) {
+                res.setEncoding('utf8');
+                res.on('data', function (data) {
+                    pagamentos = JSON.parse(data);
+                    var usuario = request.session.usuario,
+                        params = { usuario: usuario, pagamentos: pagamentos };
+                    response.render('eventos/listaPagamentosWS', params);
+                });
+            }).end();
+
+        },
     };
     return EventosController;
 };
