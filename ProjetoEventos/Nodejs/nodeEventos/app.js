@@ -75,6 +75,6 @@ app.post('/pagamentos', function (request, response) {
     });
 });
 
-app.listen(3001, function () {
+app.listen(3000, function () {
     console.log("Aplicação no ar.");
 });

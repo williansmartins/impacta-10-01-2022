@@ -24,7 +24,7 @@ load('models').into(app);
 
 var Contato = app.models.contato;
 
-app.listen('3000', function(){
+app.listen('3200', function(){
   console.info("Servidor no ar!");
 })
 

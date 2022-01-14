@@ -12,14 +12,10 @@ global.db = mongoose.connect('mongodb://127.0.0.1:27017/neventos');
 load('models').into(app);
 var Evento = app.models.eventos;
 
-app.listen(3000, function () {
-  console.log('ok');
-});
-
 var Evento = app.models.eventos;
 var Pagamento = app.models.pagamentos;
 
-app.listen('3200', function () {
+app.listen('3300', function () {
   console.log('Servidor iniciado!');
 })
 

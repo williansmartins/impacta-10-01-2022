@@ -54,7 +54,7 @@ module.exports = function (app) {
             //informações da requisição GET
             var info = {
                 host: 'localhost',
-                port: '3200',
+                port: '3300',
                 path: '/eventos',
                 method: 'GET'
             };
@@ -95,7 +95,7 @@ module.exports = function (app) {
             //informações da requisição POST
             var info = {
                 host: 'localhost',
-                port: '3200',
+                port: '3300',
                 path: '/pagamentos',
                 method: 'POST',
                 headers: {
@@ -130,7 +130,7 @@ module.exports = function (app) {
             //informações da requisição GET
             var info = {
                 host: 'localhost',
-                port: '3200',
+                port: '3300',
                 path: '/pagamentos',
                 method: 'GET'
             };
