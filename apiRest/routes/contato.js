@@ -61,12 +61,24 @@ module.exports = function (app) {
 
         console.info(">>>>>>" + id);
 
-        Contato.remove({ "_id": id }, function (erro, contato) {
+        // Contato.remove({ "_id": id }, function (erro, contato) {
+        //     if (erro) {
+        //         console.info("Erro: " + erro);
+        //         response.send(erro);
+        //     } else {
+        //         console.info(contato);
+        //         response.send('removido');
+        //     }
+        // });
+
+
+
+        Contato.findById(id, function (erro, contato) {
             if (erro) {
                 console.info("Erro: " + erro);
                 response.send(erro);
             } else {
-                console.info(contato);
+                contato.deleteOne();
                 response.send('removido');
             }
         });
