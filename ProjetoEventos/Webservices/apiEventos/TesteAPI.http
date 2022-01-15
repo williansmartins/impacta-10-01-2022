@@ -1,0 +1,25 @@
+### GET ALL
+GET http://localhost:3200/eventos
+
+### GETONE
+http://localhost:3200/eventos/61e21582f46ad1b1424723a2
+
+### CREATE
+POST http://localhost:3200/eventos
+content-type: application/json
+
+{
+    "descricao": "descricao-via-extensao",
+    "data": "2013-12-11",
+    "preco": "456"
+}
+
+### PUT
+PUT http://localhost:3200/eventos/61e21582f46ad1b1424723a2
+content-type: application/json
+
+{
+    "descricao": "descricao-via-extensao-put",
+    "data": "2013-12-11",
+    "preco": "456"
+}
