@@ -9,4 +9,6 @@ module.exports = function (app) {
     app.get('/listaEventos', valida, eventos.listaEventos);
 
     app.post('/novoEvento', eventos.novoEvento);
+
+    app.get('/listaEventosWS', valida, eventos.listaEventosWS);
 };
