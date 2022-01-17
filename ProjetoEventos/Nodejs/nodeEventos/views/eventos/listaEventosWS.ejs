@@ -33,7 +33,10 @@
                             <%= evento.descricao %>
                         </td>
                         <td>
-                            <%= evento.data %>
+                            <%
+                                var data = new Date(evento.data);
+                            %>
+                            <%= data.toISOString().substr(0, 10).split('-').reverse().join('/') %>
                         </td>
                         <td>
                             R$ <%= parseFloat(evento.preco).toFixed(2) %>
