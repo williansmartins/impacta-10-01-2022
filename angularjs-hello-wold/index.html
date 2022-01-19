@@ -18,30 +18,26 @@
 </head>
 <body ng-app="modulo1" ng-controller="controller1 as ctl">
     <h1>Trabalhando com AngularJS</h1>
-    <label for="">A</label>
-    <input type="number" ng-model="a" >
-    
-    <label for="">B</label>
-    <input type="number" ng-model="b" >
-    
-    <label for="">C</label>
-    <span ng-bind="a+b"></span>
-    <span> R$ {{a+b}} </span>
-    <br>
-    <br>
-    <br>
-    <span ng-bind="ctl.mensagem">Valor no HTML</span>
-
-    <button ng-click="ctl.alterarMensagem()">Alterar mensagem</button>
-
-    <section>
-        <h1>Lista de nomes</h1>
-        <ul>
-            <li ng-repeat="nome in ctl.nomes" ng-bind="nome"></li>
-        </ul>
+    <ul>
+        <li>
+            <a href="#!"> Página inicial</a>
+        </li>
+        <li>
+            <a href="#!carrega-html"> Carregar arquivo</a>
+        </li>
+        <li>
+            <a href="#!inexistente"> Inexistente</a>
+        </li>
+    </ul>
+    <section ng-view>
+        conteudo da view - Inicial
     </section>
+
+
+
+
     <hr>
-    <section>
+    <section class="d-none">
         <h1>Lista de alunos</h1>
         <ul>
             <li ng-repeat="aluno in ctl.alunos">
@@ -50,7 +46,7 @@
         </ul>
     </section>
     <hr>
-    <section>
+    <section class="d-none">
         <form ng-submit="ctl.submit()" name="form1">
             <input type="text" ng-model="ctl.aluno.nome" name="nome" ng-required="true"/><br>
             <span ng-show="form1.nome.$error.required && form1.nome.$dirty">Campo com problema</span>
@@ -59,14 +55,13 @@
             <input type="submit" value="Salvar" ng-disabled="!form1.$valid"/>
             <br>
             <br>
-            <code>
-                {{form1}}
-            </code>
+
         </form>
     </section>
+   
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-
+    <script src="https://code.angularjs.org/1.8.2/angular-route.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

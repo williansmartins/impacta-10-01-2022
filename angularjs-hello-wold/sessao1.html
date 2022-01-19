@@ -1,0 +1,17 @@
+<section>
+    <label for="">A</label>
+    <input type="number" ng-model="a" >
+    
+    <label for="">B</label>
+    <input type="number" ng-model="b" >
+    
+    <label for="">C</label>
+    <span ng-bind="a+b"></span>
+    <span> R$ {{a+b}} </span>
+    <br>
+    <br>
+    <br>
+    <span ng-bind="ctl.mensagem">Valor no HTML</span>
+
+    <button ng-click="ctl.alterarMensagem()">Alterar mensagem</button>
+</section>
