@@ -14,7 +14,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));  
 
 var mongoose = require('mongoose');
 global.db = mongoose.connect('mongodb://127.0.0.1:27017/neventos');
