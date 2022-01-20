@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Cadastro de Eventos</title>
+    <title>Cadastro de Pagamentos</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
@@ -11,34 +11,29 @@
     <header>
         <p>Bem-vindo, <%= usuario.nome %>
         </p>
-        <h1>Lista de Eventos do Webservice</h1>
+        <h1>Lista de Pagamentos do Webservice</h1>
     </header>
     <section>
         <!--será implementado em breve-->
         <table>
             <thead>
                 <tr>
-                    <th>Descrição</th>
-                    <th>Data</th>
-                    <th>Preço</th>
+                    <th>Evento</th>
+                    <th>Cartão</th>
+                    <th>CVV</th>
                 </tr>
             </thead>
             <tbody>
-                <% eventos.forEach(function(evento, index) { %>
+                <% pagamentos.forEach(function(pagamento, index) { %>
                     <tr>
                         <td>
-                            <%= evento.descricao %>
+                            <%= pagamento.evento %>
                         </td>
                         <td>
-                            <%= evento.data %>
+                            <%= pagamento.cartao %>
                         </td>
                         <td>
-                            <%= evento.preco %>
-                        </td>
-                        <td>
-                            <a href=
-                            "/pagamento/<%= evento.descricao %>/<%= evento.preco %>">
-                            comprar este evento</a>
+                            <%= pagamento.cvv %>
                         </td>
                     </tr>
                     <% }) %>
@@ -49,7 +44,7 @@
         <a href='/menu'>Voltar ao menu</a>
     </section>
     <footer>
-        <small>Sistema de Cadastro de Eventos e Convidados</small>
+        <small>Sistema de Cadastro de Pagamentos e Convidados</small>
     </footer>
 </body>
 

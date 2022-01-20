@@ -7,5 +7,5 @@ module.exports = function (app) {
         numcartao: { type: String },
         cvv: { type: String }
     });
-    return mongoose.model('pagamentos', pagamento);  
+    return mongoose.model('pagamentos', pagamento);
 };
