@@ -13,7 +13,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes), //Verificar
     RouterModule.forRoot(routes, { useHash: true })
   ],
   exports: [RouterModule]
