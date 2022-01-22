@@ -112,7 +112,7 @@ app.delete('/eventos/:id', function (request, response) {
           response.json(erro);
         }
         else {
-          response.send('removido');
+          response.json('removido');
         }
       });
     }

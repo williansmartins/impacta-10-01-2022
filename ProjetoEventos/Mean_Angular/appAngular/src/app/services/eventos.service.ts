@@ -15,7 +15,15 @@ export class EventosService {
     return this.http.get<Evento[]>('http://localhost:3200/eventos/');
   }
 
-  //findOne
+  create(evento: Evento){
+    return this.http.post<Evento>('http://localhost:3200/eventos/', evento);
+  }
 
+  delete(id: string){
+    return this.http.delete<Evento>('http://localhost:3200/eventos/' + id);
+  }
 
+  update(evento: Evento){
+    return this.http.put<Evento>('http://localhost:3200/eventos/' + evento._id, evento);
+  }
 }
